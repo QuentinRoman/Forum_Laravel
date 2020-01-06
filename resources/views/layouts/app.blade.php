@@ -21,7 +21,7 @@
 </head>
 <body style="background: black">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-start shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-start shadow-sm border-bottom border-warning">
             <div class="container">
                 <a href="/" class="navbar-brand">Forum</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
@@ -88,7 +88,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -44,10 +43,8 @@
                                 <div class="col-md-6">
                             @foreach($roles as $role)
                                 <div class="form-check">
-                                    <label>
                                         <input type="checkbox" name="roles[]" value="{{ $role->id }}"
                                         @if($user->roles->pluck('id')->contains($role->id)) checked @endif>
-                                    </label>
                                     <label>{{ $role->name }}</label>
                                 </div>
                             @endforeach
@@ -61,5 +58,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

@@ -36,5 +36,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('delete-users', function ($user){
             return $user->hasAnyRoles (['admin','cesi']);
         });
+
+        Gate::define('create-posts', function ($user){
+            return $user->hasRole (['user']);
+        });
     }
 }

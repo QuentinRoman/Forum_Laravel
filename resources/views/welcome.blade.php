@@ -1,26 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+    @can('create-posts')
     <a href="/create" class="button btn btn-secondary btn-lg border btn-block">Create Post</a>
-    <br><br>
-    <table class="table table-striped table-dark">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Name</th>
-            <th scope="col">Category</th>
-            <th scope="col">Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Il faut ranger le fablab</td>
-            <td>Quentin</td>
-            <td>Fablab</td>
-            <td>{{now()}}</td>
-        </tr>
-        </tbody>
-    </table>
+    @endcan
+
+    <div class="list-group">
+        @foreach($posts as $post)
+            <div class="list-group-item bg-dark bg text-light">
+                <h4><a class="text-warning" href="{{ route('Posts.show', $post) }}">{{ $post->title }}</a></h4>
+                <p>{{ $post->content }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small>Publish the {{ $post->created_at->format('d/m/Y à H:m') }}</small>
+                    <span class="badge badge-primary">Publish by {{ $post->user->name }}</span>
+                </div>
+            </div>
+        @endforeach
+        <div class="d-flex justify-content-center mt-3">
+            {{ $posts->links() }}
+        </div>
+    </div>
 @endsection

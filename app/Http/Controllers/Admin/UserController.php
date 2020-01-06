@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::oldest()->paginate(10);;
         return view('admin.users.index')->with('users', $users);
     }
 
@@ -64,7 +64,14 @@ class UserController extends Controller
 
         $user->email = $request->email;
         $user->name = $request->name;
-        $user->save();
+
+        if($user->save()){
+            $request->session()->flash('success', $user->name . ' has been updated');
+
+        }else{
+            $request->session()->flash('error', 'An error has occur during the update, of '. $user->name .' please try again or contact an administrator');
+        }
+
 
         return redirect()->route('admin.users.index');
     }
