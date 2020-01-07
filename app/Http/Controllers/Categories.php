@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
-class Posts extends Controller
+class Categories extends Controller
 {
-
-    public function __construct()
-    {
-            $this->middleware('auth')->except(['index', 'show']);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -20,48 +15,40 @@ class Posts extends Controller
      */
     public function index()
     {
-        $posts =  Post::latest()->paginate(10);
-        return view('posts/welcome')->with('posts', $posts);
+        $categories = Category::oldest()->paginate(5);
+        return view('Posts.create', compact('categories'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('posts/create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|min:5',
-            'content' => 'required|min:10'
-        ]);
-
-        $post = auth()->user()->posts()->create($data);
-
-        return redirect()->route('Posts.show', $post->id);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**

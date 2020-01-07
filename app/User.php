@@ -41,6 +41,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+
     public function hasAnyRoles($roles){
         if ($this->roles()->whereIn('name', $roles)->first()){
             return  true;
@@ -53,9 +57,5 @@ class User extends Authenticatable
             return  true;
         }
         return false;
-    }
-
-    public function posts(){
-        return $this->hasMany('App\Post');
     }
 }

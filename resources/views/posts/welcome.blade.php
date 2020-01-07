@@ -2,7 +2,7 @@
 
 @section('content')
     @can('create-posts')
-    <a href="/create" class="button btn btn-secondary btn-lg border btn-block">Create Post</a>
+    <a href="{{ route('Posts.create') }}" class="button btn btn-secondary btn-lg border btn-block">Create Post</a>
     @endcan
 
     <div class="list-group">
@@ -16,8 +16,10 @@
                 </div>
             </div>
         @endforeach
+
         <div class="d-flex justify-content-center mt-3">
             {{ $posts->links() }}
         </div>
     </div>
 @endsection
+

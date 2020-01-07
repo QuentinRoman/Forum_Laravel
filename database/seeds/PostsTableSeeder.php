@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Post;
-use App\Category;
+use Illuminate\Support\Facades\Schema;
 
 class PostsTableSeeder extends Seeder
 {
@@ -14,30 +14,9 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Post::truncate();
-        DB::table('post_category')->truncate();
-
-        /*$EventCategory = Category::where('name', 'Event')->first();
-        $FablabCategory = Category::where('name', 'FabLab')->first();
-        $CctlCategory = Category::where('name', 'CCTL')->first();
-
-        $event = Post::create([
-            'title'  => 'Event_title',
-            'name' => 'quentin'
-        ]);
-
-        $fablab = Post::create([
-            'title'  => 'FabLab_title',
-            'name' => 'quentin'
-        ]);
-
-        $cctl = Post::create([
-            'title'  => 'CCTL_title',
-            'name' => 'quentin'
-        ]);
-
-        $event->categories()->attach($EventCategory);
-        $fablab->categories()->attach($FablabCategory);
-        $cctl->categories()->attach($CctlCategory);*/
+        DB::table('posts')->truncate();
+        Schema::enableForeignKeyConstraints();
     }
 }
