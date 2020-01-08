@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Gate;
 
 class Posts extends Controller
 {
@@ -67,12 +72,18 @@ class Posts extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Post post
+     * @return Factory|RedirectResponse|View
      */
     public function edit($id)
     {
-        //
+        if (Gate::denies('edit-posts')){
+            return redirect()->route('/');
+        }
+
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
+
     }
 
     /**
@@ -80,21 +91,34 @@ class Posts extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|min:5',
+            'content' => 'required|min:10'
+        ]);
+
+        $post = Post::find($id);
+        $post->update($data);
+
+
+        return redirect()->route('Posts.show', $post);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect('/');
     }
 }

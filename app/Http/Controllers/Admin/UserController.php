@@ -34,7 +34,6 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param User $user
-     *
      * @return Factory|RedirectResponse|View
      */
     public function edit(User $user)
@@ -93,5 +92,10 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('admin.users.index');
+    }
+
+    public function ban(User $user)
+    {
+
     }
 }

@@ -9,7 +9,7 @@
         @foreach($posts as $post)
             <div class="list-group-item bg-dark bg text-light">
                 <h4><a class="text-warning" href="{{ route('Posts.show', $post) }}">{{ $post->title }}</a></h4>
-                <p>{{ $post->content }}</p>
+                <p class="">{{ $post->content }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <small>Publish the {{ $post->created_at->format('d/m/Y à H:m') }}</small>
                     <span class="badge badge-primary">Publish by {{ $post->user->name }}</span>
