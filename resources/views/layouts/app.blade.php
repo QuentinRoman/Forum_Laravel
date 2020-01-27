@@ -29,19 +29,6 @@
                 </button>
                 <!-- Left Side Of Navbar -->
                 <div class="navbar-collapse collapse" id="navbar6">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="navbar-toggler-icon"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Event</a>
-                                <a class="dropdown-item" href="#">Fablab</a>
-                                <a class="dropdown-item" href="#">CCTL</a>
-                                <a class="dropdown-item" href="#">Administration</a>
-                            </div>
-                        </li>
-                    </ul>
                     <form class="mx-2 my-auto d-inline w-100">
                         <input type="text" class="form-control border border-right-0" placeholder="Search...">
                     </form>

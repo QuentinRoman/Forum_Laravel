@@ -43,9 +43,13 @@
                                 <div class="col-md-6">
                             @foreach($roles as $role)
                                 <div class="form-check">
-                                        <input type="checkbox" name="roles[]" value="{{ $role->id }}"
+                                        <input type="radio" name="roles[]" value="{{ $role->id }}"
                                         @if($user->roles->pluck('id')->contains($role->id)) checked @endif>
-                                    <label>{{ $role->name }}</label>
+                                    @if($role->name == 'ban' )
+                                        <label class="text-danger">{{ $role->name }}</label>
+                                    @else
+                                        <label>{{ $role->name }}</label>
+                                    @endif
                                 </div>
                             @endforeach
                                 </div>

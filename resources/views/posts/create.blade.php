@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('Posts.store') }}" method="POST">
+<form action="{{ route('posts.store') }}" method="POST">
     @csrf
     <div class="form-group text-light">
         <label for="title">Title</label>
@@ -10,7 +10,17 @@
         <div class="invalid-feedback">{{ $errors->first('title') }}</div>
         @enderror
     </div>
-
+    <div class="text-light">
+        <label>Categories</label>
+    @foreach($categories as $category)
+        <div class="form-check">
+            <label>
+                <input type="radio" name="categories[]" value="{{ $category->id }}">
+                {{ $category->name }}
+            </label>
+        </div>
+    @endforeach
+    </div>
     <div class="form-group text-light">
         <label for="content">Content</label>
         <textarea class="form-control @error('content') is-invalid @enderror" rows="5"  name="content" id="content"></textarea>

@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
         $adminRole = Role::where('name', 'admin')->first();
         $cesiRole = Role::where('name', 'cesi')->first();
         $userRole = Role::where('name', 'user')->first();
+        $banRole = Role::where('name', 'ban')->first();
 
         $admin = User::create([
             'name'  => 'Admin User',
@@ -44,8 +45,15 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('user1234')
         ]);
 
+        $ban = User::create([
+            'name'  => 'Ban User',
+            'email' => 'ban@ban.com',
+            'password' => Hash::make('ban1234')
+        ]);
+
         $admin->roles()->attach($adminRole);
         $cesi->roles()->attach($cesiRole);
         $user->roles()->attach($userRole);
+        $ban->roles()->attach($banRole);
     }
 }

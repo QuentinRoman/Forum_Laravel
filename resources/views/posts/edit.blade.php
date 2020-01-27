@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('Posts.update', $post) }}" method="POST">
+    <form action="{{ route('posts.update', $post) }}" method="POST">
         @csrf
         {{ method_field('PUT') }}
         <div class="form-group text-light">

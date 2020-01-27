@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
-use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,8 +25,9 @@ class Posts extends Controller
      */
     public function index()
     {
+        $categories = Category::latest();
         $posts =  Post::latest()->paginate(10);
-        return view('posts/welcome')->with('posts', $posts);
+        return view('posts/welcome', compact(['categories', 'posts']));
     }
 
     /**
@@ -36,7 +37,8 @@ class Posts extends Controller
      */
     public function create()
     {
-        return view('posts/create');
+        $categories = Category::latest();
+        return view('posts.create', compact('categories'));
     }
 
     /**
@@ -54,7 +56,7 @@ class Posts extends Controller
 
         $post = auth()->user()->posts()->create($data);
 
-        return redirect()->route('Posts.show', $post->id);
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -104,7 +106,7 @@ class Posts extends Controller
         $post->update($data);
 
 
-        return redirect()->route('Posts.show', $post);
+        return redirect()->route('posts.show', $post);
     }
 
     /**

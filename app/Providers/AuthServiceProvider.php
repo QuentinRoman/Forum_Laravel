@@ -46,7 +46,19 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('delete-posts', function ($user){
-            return $user->hasAnyRoles (['admin','cesi']);
+            return $user->hasRole ('admin');
+        });
+
+        Gate::define('banned-users', function ($user){
+            return $user->hasRole (['ban']);
+        });
+
+        Gate::define('delete-comment', function ($user){
+            return $user->hasAnyRoles (['admin', 'cesi']);
+        });
+
+        Gate::define('edit-comment', function ($user){
+            return $user->hasAnyRoles (['admin', 'cesi']);
         });
     }
 }

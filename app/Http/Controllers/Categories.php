@@ -15,18 +15,17 @@ class Categories extends Controller
      */
     public function index()
     {
-        $categories = Category::oldest()->paginate(5);
-        return view('Posts.create', compact('categories'));
+
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        //
+
     }
 
     /**
