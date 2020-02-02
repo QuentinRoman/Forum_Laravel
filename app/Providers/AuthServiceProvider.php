@@ -54,11 +54,15 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('delete-comment', function ($user){
-            return $user->hasAnyRoles (['admin', 'cesi']);
+            return $user->hasAnyRoles (['admin']);
         });
 
         Gate::define('edit-comment', function ($user){
-            return $user->hasAnyRoles (['admin', 'cesi']);
+            return $user->hasAnyRoles (['admin']);
+        });
+
+        Gate::define('report-comment', function ($user){
+            return $user->hasAnyRoles (['cesi', 'user']);
         });
     }
 }

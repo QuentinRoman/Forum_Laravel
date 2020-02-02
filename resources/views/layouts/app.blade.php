@@ -29,8 +29,9 @@
                 </button>
                 <!-- Left Side Of Navbar -->
                 <div class="navbar-collapse collapse" id="navbar6">
-                    <form class="mx-2 my-auto d-inline w-100">
-                        <input type="text" class="form-control border border-right-0" placeholder="Search...">
+                    <form action="search" class="mx-2 my-auto d-inline w-100">
+                        <input type="search" name="search" class="form-control border border-right-0" placeholder="Search...">
+                        {{--<button class="btn btn-dark btn-outline-light form-inline" type="submit">Search</button>--}}
                     </form>
                 </div>
                 <!-- Right Side Of Navbar -->

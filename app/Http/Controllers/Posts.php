@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Mail\ReportMail;
 use App\Post;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Gate;
 
@@ -122,5 +125,11 @@ class Posts extends Controller
         $post->delete();
 
         return redirect('/');
+    }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $posts = DB::table('posts')->where('title', 'content', '%'.$search.'%')->paginate(5);
+        return view('posts/welcome', ['posts' => $posts]);
     }
 }
