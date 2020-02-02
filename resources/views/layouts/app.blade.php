@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
 </head>
-<body style="background: black">
+<body class="bg bg-dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-start shadow-sm border-bottom border-warning">
             <div class="container">

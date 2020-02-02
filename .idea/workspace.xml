@@ -16,6 +16,9 @@
       <executable />
     </execution>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Laravel" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -180,7 +183,7 @@
       <workItem from="1580230182339" duration="4860000" />
       <workItem from="1580314915252" duration="5853000" />
       <workItem from="1580636633920" duration="1889000" />
-      <workItem from="1580642310855" duration="770000" />
+      <workItem from="1580642310855" duration="1739000" />
     </task>
     <servers />
   </component>
