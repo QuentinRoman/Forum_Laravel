@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cb5cf3038e46582d17e7c1404a4644f",
+    "content-hash": "38be7f0c00ce0d3b9c3bf4a924ab38e7",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -678,22 +678,23 @@
         },
         {
             "name": "laravelista/comments",
-            "version": "3.1.1",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravelista/comments.git",
-                "reference": "6f09748873f90b112de36702b390f882b3839a7c"
+                "reference": "96ab900cf80ba222224145ac659f94e9f51a2547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravelista/comments/zipball/6f09748873f90b112de36702b390f882b3839a7c",
-                "reference": "6f09748873f90b112de36702b390f882b3839a7c",
+                "url": "https://api.github.com/repos/laravelista/comments/zipball/96ab900cf80ba222224145ac659f94e9f51a2547",
+                "reference": "96ab900cf80ba222224145ac659f94e9f51a2547",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "^1.7",
                 "illuminate/database": "^5.6|^6.0",
                 "illuminate/http": "^5.6|^6.0",
+                "illuminate/pagination": "^5.6|^6.0",
                 "illuminate/support": "^5.6|^6.0",
                 "php": "^7.1.3",
                 "spatie/laravel-honeypot": "^1.3"
@@ -727,7 +728,7 @@
                 "comments",
                 "laravel"
             ],
-            "time": "2019-09-07T16:33:18+00:00"
+            "time": "2020-02-08T09:15:34+00:00"
         },
         {
             "name": "league/flysystem",

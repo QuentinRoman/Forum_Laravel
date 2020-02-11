@@ -7,6 +7,8 @@ use Laravelista\Comments\Commentable;
 
 class Post extends Model
 {
+    protected $fillable = ['title', 'content'];
+
     use Commentable;
 
     public function user(){
