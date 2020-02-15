@@ -23,7 +23,9 @@ Route::resource('posts', 'Posts');
 Route::get('/', 'Posts@index')->name('posts.index');
 Route::get('/search', 'Posts@search');
 
-Route::get('email', 'ContactController@sendEmail');
+//Route::get('posts.create', 'Posts@create');
+
+//Route::get('email', 'ContactController@sendEmail');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function (){
     Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store']]);

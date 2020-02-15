@@ -15,7 +15,7 @@
     @foreach($categories as $category)
         <div class="form-check">
             <label>
-                <input type="radio" name="categories[]" value="{{ $category->id }}">
+                <input type="radio" name="categories" value="">
                 {{ $category->name }}
             </label>
         </div>

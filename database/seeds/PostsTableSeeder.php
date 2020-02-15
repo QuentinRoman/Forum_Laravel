@@ -17,7 +17,6 @@ class PostsTableSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         Post::truncate();
-        DB::table('category_post')->truncate();
         Schema::enableForeignKeyConstraints();
 
         $eventCategory = Category::where('name', 'Event')->first();

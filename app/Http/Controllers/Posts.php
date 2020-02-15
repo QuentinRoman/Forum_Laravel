@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Mail\ReportMail;
 use App\Post;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
