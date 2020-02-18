@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d9a70f-9abd-47aa-a02d-f9bb1832c00a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Notifications/ReportComment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_18_104603_create_notifications_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_18_173843_create_category_post_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_05_160015_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_160015_create_categories_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_05_193834_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_193834_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_06_170015_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_160015_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,12 +147,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/users" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/posts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/users" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -207,7 +201,7 @@
       <workItem from="1581783087778" duration="347000" />
       <workItem from="1581845886128" duration="1387000" />
       <workItem from="1582020631018" duration="5318000" />
-      <workItem from="1582026399794" duration="4660000" />
+      <workItem from="1582026399794" duration="13627000" />
     </task>
     <servers />
   </component>
@@ -237,10 +231,10 @@
     <state x="723" y="232" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1847.897@67.27.1847.897" timestamp="1578343468297" />
     <state x="724" y="233" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1851.901@67.27.1851.901" timestamp="1578506831089" />
     <state x="725" y="268" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581517823628" />
-    <state x="773" y="232" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578070286452">
+    <state x="773" y="232" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582050722294">
       <screen x="67" y="27" width="1847" height="897" />
     </state>
-    <state x="773" y="232" width="424" height="484" key="FileChooserDialogImpl/67.27.1847.897@67.27.1847.897" timestamp="1578070286452" />
+    <state x="773" y="232" width="424" height="484" key="FileChooserDialogImpl/67.27.1847.897@67.27.1847.897" timestamp="1582050722294" />
     <state x="685" y="288" width="601" height="373" key="NewPhpClassDialog" timestamp="1578073713365">
       <screen x="67" y="27" width="1847" height="897" />
     </state>
@@ -249,6 +243,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="896" y="303" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580232643348" />
+    <state x="758" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582050717478">
+      <screen x="67" y="27" width="1847" height="897" />
+    </state>
+    <state x="758" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1847.897@67.27.1847.897" timestamp="1582050717478" />
     <state x="1083" y="132" width="711" height="796" key="find.popup" timestamp="1580642675662">
       <screen x="67" y="27" width="1851" height="901" />
     </state>

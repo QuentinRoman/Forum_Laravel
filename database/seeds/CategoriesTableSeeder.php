@@ -18,9 +18,9 @@ class CategoriesTableSeeder extends Seeder
         Category::truncate();
         Schema::enableForeignKeyConstraints();
 
-        Category::create(['name' => 'Event']);
-        Category::create(['name' => 'FabLab']);
-        Category::create(['name' => 'CCTL']);
-        Category::create(['name' => 'Vie Associative']);
+        Category::create(['name' => 'Event', 'slug' => 'event']);
+        Category::create(['name' => 'FabLab', 'slug' => 'fablab']);
+        Category::create(['name' => 'CCTL', 'slug' => 'cctl']);
+        Category::create(['name' => 'Vie Associative', 'slug' => 'vie-associative']);
     }
 }

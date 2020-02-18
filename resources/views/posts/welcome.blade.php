@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('side')
+    @foreach($categories as $category)
+        <a class="form-check" href="{{ route('posts.index', ['category'=> $category->slug]) }}"> {{ $category->name }} </a>
+    @endforeach
+@endsection
+
 @section('content')
     @can('create-posts')
     <a href="{{ route('posts.create') }}" class="button btn btn-secondary btn-lg border btn-block">Create Post</a>
@@ -12,7 +18,12 @@
                 <p class="">{{ $post->content }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <small>Publish the {{ $post->created_at->format('d/m/Y à H:m') }}</small>
-                    <span class="badge badge-primary">{{ $post->category_id }}</span>
+
+                    <span class="badge badge-primary">
+                        @foreach($post->categories as $category)
+                            {{ $category->name }}
+                        @endforeach
+                    </span>
                     <span class="badge badge-primary">Publish by {{ $post->user->name }}</span>
                 </div>
             </div>

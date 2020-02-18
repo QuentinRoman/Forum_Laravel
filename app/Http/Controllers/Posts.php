@@ -27,9 +27,20 @@ class Posts extends Controller
      */
     public function index()
     {
-        $categories = Category::latest();
-        $posts =  Post::latest()->paginate(10);
-        return view('posts/welcome', compact(['categories', 'posts']));
+        if (request()->category){
+            $posts = Post::with('categories')->whereHas('categories', function ($query){
+                $query->where('slug', request()->category);
+            })->paginate(10);
+            $categories = Category::all();
+        }else{
+            $categories = Category::all();
+            $posts = Post::with('categories')->paginate(10);
+        }
+
+        return view('posts/welcome')->with([
+            'posts' => $posts,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -58,6 +69,7 @@ class Posts extends Controller
         ]);
 
         $post = auth()->user()->posts()->create($data);
+        $post->categories()->attach($data['category_id']);
 
         return redirect()->route('posts.show', $post->id);
     }
@@ -128,8 +140,11 @@ class Posts extends Controller
     }
 
     public function search(Request $request){
+        $categories = Category::all();
         $search = $request->get('search');
-        $posts = DB::table('posts')->where('title', 'content', '%'.$search.'%')->paginate(5);
-        return view('posts/welcome', ['posts' => $posts]);
+        $posts = Post::where('title', 'like', '%'.$search.'%')->orWhere('content', 'like', '%'.$search.'%')->paginate(5);
+        return view('posts/welcome', ['posts' => $posts,
+            'categories' => $categories
+        ]);
     }
 }
