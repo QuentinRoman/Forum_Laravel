@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -17,10 +18,15 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('content');
-            $table->unsignedBigInteger("user_id")->nullable()->index();
-            $table->unsignedBigInteger("category_id")->nullable()->index();
+            $table->unsignedBigInteger("user_id")->nullable();
+            $table->unsignedBigInteger("category_id")->nullable();
             $table->timestamps();
+
+        });
+
+        Schema::table('posts', function(Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d9a70f-9abd-47aa-a02d-f9bb1832c00a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/ReportComment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_18_104603_create_notifications_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_05_193834_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_193834_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_18_130344_create_category_post_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_18_130529_create_foreign_keys_for_category_post_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_06_170015_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_160015_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/comments/_comment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,12 +153,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/users" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/posts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/users" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -202,6 +205,9 @@
       <workItem from="1581516365080" duration="6164000" />
       <workItem from="1581783065349" duration="13000" />
       <workItem from="1581783087778" duration="347000" />
+      <workItem from="1581845886128" duration="1387000" />
+      <workItem from="1582020631018" duration="5318000" />
+      <workItem from="1582026399794" duration="4660000" />
     </task>
     <servers />
   </component>

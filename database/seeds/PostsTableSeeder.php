@@ -19,38 +19,33 @@ class PostsTableSeeder extends Seeder
         Post::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $eventCategory = Category::where('name', 'Event')->first();
-        $fablabCategory = Category::where('name', 'FabLab')->first();
-        $cctlCategory = Category::where('name', 'CCTL')->first();
-        $vieCategory = Category::where('name', 'Vie Associative')->first();
-
-        $event = Post::create([
+        Post::create([
             'title'  => 'event title',
             'content' => 'event content ',
-            'user_id' => '1'
+            'user_id' => '1',
+            'category_id' => '1'
         ]);
 
-        $fablab = Post::create([
+        Post::create([
             'title'  => 'fablab title',
             'content' => 'fablab content',
-            'user_id' => '1'
+            'user_id' => '1',
+            'category_id' => '2'
         ]);
 
-        $cctl = Post::create([
+        Post::create([
             'title'  => 'cctl title',
             'content' => 'cctl content',
-            'user_id' => '1'
+            'user_id' => '1',
+            'category_id' => '3'
         ]);
 
-        $vie = Post::create([
+        Post::create([
             'title'  => 'Vie Associative title',
             'content' => 'Vie Associative content',
-            'user_id' => '1'
+            'user_id' => '1',
+            'category_id' => '4'
         ]);
 
-        $event->categories()->associate($eventCategory);
-        $fablab->categories()->associate($fablabCategory);
-        $cctl->categories()->associate($cctlCategory);
-        $vie->categories()->associate($vieCategory);
     }
 }

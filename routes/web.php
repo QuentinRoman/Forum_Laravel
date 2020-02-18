@@ -11,7 +11,7 @@
 |
 */
 
-use App\Mail\ReportMail;
+
 use Illuminate\Support\Facades\Mail;
 
 Auth::routes();
@@ -19,13 +19,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'Posts');
+Route::redirect('/', '/posts');
 
-Route::get('/', 'Posts@index')->name('posts.index');
 Route::get('/search', 'Posts@search');
 
-//Route::get('posts.create', 'Posts@create');
+Route::get('ReportMail', function () {
+    $invoice = \Laravelista\Comments\Comment::find(1);
 
-//Route::get('email', 'ContactController@sendEmail');
+    return (new App\Notifications\ReportComment($invoice))
+        ->toMail($invoice->user);
+});
+
+Route::get('email', 'ContactController@sendEmail');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function (){
     Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store']]);

@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Mail;
+use App\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -13,9 +15,9 @@ class Contact extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param Authenticatable|null $user
      */
-    public function __construct()
+    public function __construct(User $user)
     {
         //
     }

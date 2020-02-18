@@ -39,7 +39,7 @@ class Posts extends Controller
      */
     public function create()
     {
-        $categories = Category::latest();
+        $categories = Category::all();
         return view('posts.create', compact('categories'));
     }
 
@@ -53,7 +53,8 @@ class Posts extends Controller
     {
         $data = $request->validate([
             'title' => 'required|min:5',
-            'content' => 'required|min:10'
+            'content' => 'required|min:10',
+            'category_id' => 'required'
         ]);
 
         $post = auth()->user()->posts()->create($data);

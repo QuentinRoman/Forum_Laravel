@@ -7,7 +7,7 @@ use Laravelista\Comments\Commentable;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content','category_id'];
 
     use Commentable;
 
@@ -16,7 +16,7 @@ class Post extends Model
     }
 
     public function categories(){
-        return $this->belongsTo('App\Category');
+        return $this->belongsToMany('App\Category');
     }
 
     public function hasAnyCat($categories){

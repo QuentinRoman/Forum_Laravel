@@ -25,7 +25,7 @@
                 </form>
             @endcan
             @can('report-comment')
-                    <form method="post" action="{{url('sendemail/send')}}">
+                    <form method="post" action="{{ route('ReportMail') }}">
                         <button type="submit" class="btn btn-sm btn-link text-warning text-uppercase">Report Comment</button>
                     </form>
             @endcan

@@ -58,7 +58,7 @@
                                 Update
                             </button>
                         </form>
-                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="float-left">
+                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="">
                             @csrf
                             {{ method_field('DELETE') }}
                             <button type="submit" class="btn btn-danger">Delete</button>

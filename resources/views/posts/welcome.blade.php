@@ -12,6 +12,7 @@
                 <p class="">{{ $post->content }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <small>Publish the {{ $post->created_at->format('d/m/Y à H:m') }}</small>
+                    <span class="badge badge-primary">{{ $post->category_id }}</span>
                     <span class="badge badge-primary">Publish by {{ $post->user->name }}</span>
                 </div>
             </div>
