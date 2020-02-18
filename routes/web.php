@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'Posts');
 Route::redirect('/', '/posts');
 
+Route::resource('category', 'Categories');
+
 Route::get('/search', 'Posts@search');
 
 Route::get('ReportMail', function () {
